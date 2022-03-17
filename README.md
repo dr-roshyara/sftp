@@ -29,11 +29,19 @@
             DB_DATABASE=test
             DB_USERNAME=roshyara 
             DB_PASSWORD=my_password
-            
-  - Run migration
-        php artisan migrate
- -  
 
+  - Run migration
+        
+        php artisan migrate
+ -  Add SftP login data  in .env file . The login data are from the server where you  want to send the file via sftp. 
+
+        SFTP_HOST         ='sftp3.dhl.com'
+        SFTP_PORT         = 4222
+        SFTP_USERNAME     ='user_name'
+        SFTP_PASSWORD     ='my_password'
+        SFTP_ROOT         ='in/work/'
+-   
+       
 
 
 ## About Laravel
