@@ -34,5 +34,5 @@ Route::middleware(['auth:sanctum', 'verified'])
         ->name('sftp.show');
 
 Route::middleware(['auth:sanctum', 'verified'])
-        ->get('/sftp/store', [SftpController::class, 'store_sftp_file'])
+        ->put('/sftp/store', [SftpController::class, 'store_sftp_file'])
         ->name('sftp.store');
