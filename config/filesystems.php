@@ -56,6 +56,31 @@ return [
             'throw' => false,
         ],
 
+        'sftp' => [
+            'driver' => 'sftp',
+            'host' => env('SFTP_HOST'),
+            'port' => env('SFTP_PORT'),
+            // Settings for basic authentication...
+            'username' => env('SFTP_USERNAME'),
+            'password' => env('SFTP_PASSWORD'),
+         
+            // Settings for SSH key based authentication with encryption password...
+            // 'privateKey' => env('SFTP_PRIVATE_KEY'),
+            // 'password' => env('SFTP_PASSWORD'),
+         
+            // Optional SFTP Settings...
+            // 'hostFingerprint' => env('SFTP_HOST_FINGERPRINT'),
+            // 'maxTries' => 4,
+            // 'passphrase' => env('SFTP_PASSPHRASE'),
+            
+            'root' => env('SFTP_ROOT'),
+            'permPublic' => 0755,
+            'directoryPerm' => 0755,
+            'visibility' => 'public',
+            'timeout' => 30,
+            'useAgent' => true,
+        ],
+
     ],
 
     /*

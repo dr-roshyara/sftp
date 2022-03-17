@@ -52,6 +52,70 @@
         For more information see 
         https://flysystem.thephpleague.com/docs/adapter/sftp-v3/ 
 
+-   Register SftpServiceProvider in the **config\app.php** file as below 
+
+        ....
+        App\Providers\JetstreamServiceProvider::class,
+
+        /*
+         * Custom   Service Providers...
+         * 
+         */
+         APP\Providers\SftpServiceProvider::class,
+-   Add sftp as disk in  **config\filesystems.php** as shown sftp below
+
+     'disks' => [
+
+        'local' => [
+            'driver' => 'local',
+            'root' => storage_path('app'),
+        ],
+
+        'public' => [
+            'driver' => 'local',
+            'root' => storage_path('app/public'),
+            'url' => env('APP_URL').'/storage',
+            'visibility' => 'public',
+        ],
+
+        's3' => [
+            'driver' => 's3',
+            'key' => env('AWS_ACCESS_KEY_ID'),
+            'secret' => env('AWS_SECRET_ACCESS_KEY'),
+            'region' => env('AWS_DEFAULT_REGION'),
+            'bucket' => env('AWS_BUCKET'),
+            'url' => env('AWS_URL'),
+            'endpoint' => env('AWS_ENDPOINT'),
+            'use_path_style_endpoint' => env('AWS_USE_PATH_STYLE_ENDPOINT', false),
+        ],
+        
+        // **above two disks are already given just add the following disk**
+
+        'sftp' => [
+            'driver' => 'sftp',
+            'host' => env('SFTP_HOST'),
+            'port' => 4222,
+            // Settings for basic authentication...
+            'username' => env('SFTP_USERNAME'),
+            'password' => env('SFTP_PASSWORD'),
+         
+            // Settings for SSH key based authentication with encryption password...
+            // 'privateKey' => env('SFTP_PRIVATE_KEY'),
+            // 'password' => env('SFTP_PASSWORD'),
+         
+            // Optional SFTP Settings...
+            // 'hostFingerprint' => env('SFTP_HOST_FINGERPRINT'),
+            // 'maxTries' => 4,
+            // 'passphrase' => env('SFTP_PASSPHRASE'),
+            
+            'root' => env('SFTP_ROOT'),
+            'permPublic' => 0755,
+            'directoryPerm' => 0755,
+            'visibility' => 'public',
+            'timeout' => 30,
+            'useAgent' => true,
+        ],
+
 -   Go to SftpServiceProvider and create a Filesystem as shown in the file 
         **app\Providers\SftpServiceProvider.php**
 

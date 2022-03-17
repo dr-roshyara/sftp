@@ -179,6 +179,12 @@ return [
         App\Providers\FortifyServiceProvider::class,
         App\Providers\JetstreamServiceProvider::class,
 
+        /*
+         * Custom   Service Providers...
+         * 
+         */
+         APP\Providers\SftpServiceProvider::class,
+
     ],
 
     /*
