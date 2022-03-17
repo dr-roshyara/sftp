@@ -2,15 +2,25 @@
   - Install the laravel   9  
         comoser create-project laravel/laravel sftp 
   - Install jetstream 
+        
         composer require laravel/jetstream
+
   - Install Inertia with vue.js 
-    < p> php artisan jetstream:install inertia --teams</p>
+        
+        php artisan jetstream:install inertia --teams
+
   - Finalizing The Installation
-      npm install /yarn install 
-      npm run dev /yarn run prod
+
+        npm install  / yarn install 
+        npm run prod / yarn run prod
+
   - Update .env file with the database parameter 
-        - Go to mysql : mysql -u roshyara -p  and create database 
+
+        - Go to mysql : 
+            
+            mysql -u roshyara -p  and create database 
             create database test;
+
         - Put Your parameter in .env file 
 
             DB_CONNECTION=mysql
@@ -19,8 +29,10 @@
             DB_DATABASE=test
             DB_USERNAME=roshyara 
             DB_PASSWORD=my_password
-  - Run migration 
-     php artisan migrate
+            
+  - Run migration
+        php artisan migrate
+ -  
 
 
 
