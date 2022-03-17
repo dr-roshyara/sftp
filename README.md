@@ -1,10 +1,11 @@
 # SFTP Implementation in Laravel 
   - Install the laravel   9
-    comoser create-project laravel/laravel sftp 
+  
+        comoser create-project laravel/laravel sftp 
   - Install jetstream 
      composer require laravel/jetstream
   - Install Inertia with vue.js 
-     php artisan jetstream:install inertia --teams
+    < p> php artisan jetstream:install inertia --teams</p>
   - Finalizing The Installation
       npm install /yarn install 
       npm run dev /yarn run prod
@@ -12,6 +13,7 @@
         - Go to mysql : mysql -u roshyara -p  and create database 
             create database test;
         - Put Your parameter in .env file 
+
             DB_CONNECTION=mysql
             DB_HOST=127.0.0.1
             DB_PORT=3306
