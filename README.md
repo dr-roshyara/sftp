@@ -1,9 +1,8 @@
 # SFTP Implementation in Laravel 
-  - Install the laravel   9
-  
+  - Install the laravel   9  
         comoser create-project laravel/laravel sftp 
   - Install jetstream 
-     composer require laravel/jetstream
+        composer require laravel/jetstream
   - Install Inertia with vue.js 
     < p> php artisan jetstream:install inertia --teams</p>
   - Finalizing The Installation
