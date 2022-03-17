@@ -183,7 +183,7 @@ return [
          * Custom   Service Providers...
          * 
          */
-         APP\Providers\SftpServiceProvider::class,
+        App\Providers\SftpServiceProvider::class,
 
     ],
 

@@ -61,15 +61,14 @@
          * Custom   Service Providers...
          * 
          */
-         APP\Providers\SftpServiceProvider::class,
+        App\Providers\SftpServiceProvider::class,
 -   Add sftp as disk in  **config\filesystems.php** as shown sftp below
 
-     'disks' => [
-
-        'local' => [
-            'driver' => 'local',
-            'root' => storage_path('app'),
-        ],
+        'disks' => [
+            'local' => [
+                'driver' => 'local',
+                'root' => storage_path('app'),
+            ],
 
         'public' => [
             'driver' => 'local',
@@ -119,7 +118,54 @@
 -   Go to SftpServiceProvider and create a Filesystem as shown in the file 
         **app\Providers\SftpServiceProvider.php**
 
-       
+-   Go to  **routes\web.php** file to crea two  routes as following 
+
+    Route::middleware(['auth:sanctum', 'verified'])
+        ->get('/sftp/show', [SftpController::class, 'show_sftp_form'])
+        ->name('sftp.show');
+
+    Route::middleware(['auth:sanctum', 'verified'])
+        ->get('/sftp/store', [SftpController::class, 'store_sftp_file'])
+        ->name('sftp.store');
+
+-   Go to app\Http\Controllers\SftpController.php and create a upload form redning
+    function. 
+
+    /**
+    * 
+    *File Upload function 
+    *@param: null 
+    *@return: Inertia rendering 
+    *
+    */
+     public function show_sftp_form(){
+
+        return Inertia::render('Sftp/SftpForm' , [
+                
+        ]);
+    }
+
+-   Go to  **resources\js\Pages\**  do the follwoings
+
+     -create a folder Sftp 
+     -create a file **SftpForm.vue**
+     -create a **vue form** in the **SftpForm.vue** file  
+     -run : yarn run prod / npm run prod 
+
+-   Check the form and make a trial 
+
+   
+    - php artisan optimize 
+    - php artisan key:generate
+    - Run the laravel  project locally 
+      php artisan serve 
+    - Go to the browser and start the laravel web 
+    - Register and verify youself as user 
+    - Go to the page **http://127.0.0.1:8000//sftp/show** 
+
+
+     
+
 
 
 ## About Laravel

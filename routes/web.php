@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\SftpController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -27,3 +28,11 @@ Route::get('/', function () {
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->name('dashboard');
+
+Route::middleware(['auth:sanctum', 'verified'])
+        ->get('/sftp/show', [SftpController::class, 'show_sftp_form'])
+        ->name('sftp.show');
+
+Route::middleware(['auth:sanctum', 'verified'])
+        ->get('/sftp/store', [SftpController::class, 'store_sftp_file'])
+        ->name('sftp.store');
