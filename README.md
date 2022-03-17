@@ -40,7 +40,21 @@
         SFTP_USERNAME     ='user_name'
         SFTP_PASSWORD     ='my_password'
         SFTP_ROOT         ='in/work/'
--   
+-   Make a Controller and a service provider  for sftp
+
+        php artisan make:controller SftpController 
+        php artisan make:provider SftpServiceProvider 
+
+-   Install SFTP Adapter (V3) 
+        
+        composer require league/flysystem-sftp-v3:^3.0
+        composer update 
+        For more information see 
+        https://flysystem.thephpleague.com/docs/adapter/sftp-v3/ 
+
+-   Go to SftpServiceProvider and create a Filesystem as shown in the file 
+        **app\Providers\SftpServiceProvider.php**
+
        
 
 
