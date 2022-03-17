@@ -165,11 +165,11 @@
 
 -   Create a message variable for Inertia to send the seccess message 
 
-    - Go to the middleware file : **app\Http\HandleInertiaRequests.php**
+        -   Go to the middleware file : **app\Http\HandleInertiaRequests.php**
 
-    - Write the function share as below . Add the message variable.
+        -   Write the function share as below . Add the message variable.
 
-         public function share(Request $request)
+        ``public function share(Request $request)
         {
             return array_merge(parent::share($request), [
                 //
@@ -181,9 +181,9 @@
                     ];
                 },
             ]);
-        }
+        }``
     
--     Go to **app\Http\Controllers\SftpController.php** and create the following  
+-   Go to **app\Http\Controllers\SftpController.php** and create the following  
       two functions . The details of the two functions look at the file.
 
       -  public function store_sftp_file(Request $request)
