@@ -169,7 +169,7 @@
 
         -   Write the function share as below . Add the message variable.
 
-        ``public function share(Request $request)
+        public function share(Request $request)
         {
             return array_merge(parent::share($request), [
                 //
@@ -181,7 +181,7 @@
                     ];
                 },
             ]);
-        }``
+        }
     
 -   Go to **app\Http\Controllers\SftpController.php** and create the following  
       two functions . The details of the two functions look at the file.
